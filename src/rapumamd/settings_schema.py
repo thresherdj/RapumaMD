@@ -1,0 +1,118 @@
+"""
+Defines all known RapumaMD settings.
+Each entry drives both the GUI layout and serves as the canonical list of available options.
+Add new settings here — no other changes needed to make them appear in the GUI.
+"""
+
+SETTINGS_SCHEMA = [
+    {
+        "section": "document",
+        "key": "title",
+        "label": "Title",
+        "type": "string",
+        "default": "",
+    },
+    {
+        "section": "document",
+        "key": "author",
+        "label": "Author",
+        "type": "string",
+        "default": "",
+    },
+    {
+        "section": "document",
+        "key": "date",
+        "label": "Date",
+        "type": "string",
+        "default": "",
+        "hint": "e.g. 2026-03-25 or @today()",
+    },
+    {
+        "section": "latex",
+        "key": "engine",
+        "label": "PDF Engine",
+        "type": "choice",
+        "default": "xelatex",
+        "choices": ["xelatex", "pdflatex", "lualatex"],
+    },
+    {
+        "section": "latex",
+        "key": "paper",
+        "label": "Paper Size",
+        "type": "choice",
+        "default": "letter",
+        "choices": ["letter", "a4", "a5", "legal"],
+    },
+    {
+        "section": "latex",
+        "key": "fontsize",
+        "label": "Font Size",
+        "type": "choice",
+        "default": "11pt",
+        "choices": ["10pt", "11pt", "12pt"],
+    },
+    {
+        "section": "latex",
+        "key": "mainfont",
+        "label": "Main Font",
+        "type": "string",
+        "default": "",
+        "hint": "e.g. Georgia, Times New Roman (xelatex only)",
+    },
+    {
+        "section": "latex",
+        "key": "monofont",
+        "label": "Mono Font",
+        "type": "string",
+        "default": "",
+        "hint": "e.g. Courier New (xelatex only)",
+    },
+    {
+        "section": "latex",
+        "key": "linestretch",
+        "label": "Line Spacing",
+        "type": "string",
+        "default": "",
+        "hint": "e.g. 1.5 for 1.5x spacing",
+    },
+    {
+        "section": "latex",
+        "key": "watermark",
+        "label": "Watermark",
+        "type": "string",
+        "default": "",
+        "hint": "e.g. DRAFT, CONFIDENTIAL (leave empty to disable)",
+    },
+    {
+        "section": "latex",
+        "key": "margin-left",
+        "label": "Margin Left",
+        "type": "string",
+        "default": "",
+        "hint": "e.g. 1in, 2.5cm",
+    },
+    {
+        "section": "latex",
+        "key": "margin-right",
+        "label": "Margin Right",
+        "type": "string",
+        "default": "",
+        "hint": "e.g. 1in, 2.5cm",
+    },
+    {
+        "section": "latex",
+        "key": "margin-top",
+        "label": "Margin Top",
+        "type": "string",
+        "default": "",
+        "hint": "e.g. 1in, 2.5cm",
+    },
+    {
+        "section": "latex",
+        "key": "margin-bottom",
+        "label": "Margin Bottom",
+        "type": "string",
+        "default": "",
+        "hint": "e.g. 1in, 2.5cm",
+    },
+]
