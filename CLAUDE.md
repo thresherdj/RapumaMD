@@ -57,7 +57,8 @@ date = "2026-03-24"
 engine = "xelatex"
 paper = "letter"
 fontsize = "11pt"
-# Any extra key/value pairs under [latex] are passed directly as pandoc -V variables
+watermark = "DRAFT"   # injected via \usepackage{draftwatermark}, not passed as -V
+# Any other key/value pairs under [latex] are passed directly as pandoc -V variables
 # e.g. margin-left = "1in"
 ```
 

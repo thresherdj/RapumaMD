@@ -6,7 +6,8 @@ from pathlib import Path
 from .macros import get_macro
 
 # Matches @macro_name or @macro_name(arg1, arg2, ...)
-_MACRO_RE = re.compile(r"@(\w+)(?:\(([^)]*)\))?")
+# Negative lookbehind excludes email addresses (e.g. user@domain.tld)
+_MACRO_RE = re.compile(r"(?<![\w.])@(\w+)(?:\(([^)]*)\))?")
 
 
 def preprocess(source: str, project_dir: Path) -> str:

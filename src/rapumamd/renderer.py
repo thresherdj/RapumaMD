@@ -1,5 +1,6 @@
 """Invokes pandoc to render preprocessed markdown to PDF."""
 
+import shutil
 import subprocess
 import tempfile
 import os
@@ -26,9 +27,14 @@ def render(md_source: str, config: dict, output_path: Path):
     fontsize = latex.get("fontsize", "11pt")
     watermark = latex.get("watermark", "").strip()
 
+    pandoc = shutil.which("pandoc")
+    if pandoc is None:
+        raise RuntimeError(
+            "pandoc not found on PATH. Install pandoc or ensure it is on your PATH."
+        )
+
     args = [
-        "pandoc",
-        "-f", "markdown",
+        pandoc,
         "-o", str(output_path),
         f"--pdf-engine={engine}",
         "-V", f"papersize={paper}",
